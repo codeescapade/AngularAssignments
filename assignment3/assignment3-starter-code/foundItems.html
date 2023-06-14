@@ -1,0 +1,24 @@
+<div class="row">
+    <table class="table" ng-show="list.items.length > 0">
+      <thead>
+        <tr>
+          <th>Short Name</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in list.items">
+          <td>{{ item.short_name }}</td>
+          <td><strong>{{ item.name }}</strong></td>
+          <td>{{ item.description }}</td>
+          <td>
+            <button type="button" class="btn btn-secondary" ng-click="list.removeItem($index)">Don't want this one!</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <h3 ng-show="list.items.length === 0 && list.searchPerformed" class="text-danger">Nothing Found</h3>
